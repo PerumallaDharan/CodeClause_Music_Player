@@ -35,12 +35,11 @@ def load_music():
         songlist.insert("end", song)
 
     songlist.selection_set(0)
-    current_song = song[songlist.curselection()[0]]
-
+    current_song = songs[songlist.curselection()[0]]
 
 def play_music():
     global current_song, paused
-
+    
     if not paused:
         pygame.mixer.music.load(os.path.join(root.directory, current_song))
         pygame.mixer.music.play()
@@ -53,12 +52,14 @@ def pause_music():
     global current_song, paused
 
     try:
-        songlist.selection_clear(0, END)
-        songlist.selection_set(songs.index(current_song)+1)
-        current_song = songs[songlist.curselection()[0]]
-        play_music()
+        # songlist.selection_clear(0, END)
+        # songlist.selection_set(songs.index(current_song)+1)
+        # current_song = songs[songlist.curselection()[0]]
+        # play_music()
+        pygame.mixer.music.pause()
     except:
-        pass
+        # pass
+        pygame.mixer.music.unpause()
 
 
 def prev_music():
