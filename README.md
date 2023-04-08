@@ -3,8 +3,8 @@
 
 ## Music Player
 - This is a python script that creates a music player with the following functionalities:
-- Displays a list of songs
-- Can play, pause, play previous and play next song
+    - Displays a list of songs
+    - Can play, pause, play previous and play next song
 
 
 ## Prerequisites
